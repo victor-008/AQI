@@ -19,6 +19,7 @@ app.layout = html.Div([
         n_intervals=0
     ),
     dcc.Graph(id="temp-humidity"),
+    dcc.Graph(id="pm-graph"),
     dcc.Graph(id="particle-bar"),
 ])
 
@@ -98,4 +99,4 @@ def update_graphs(n):
     return temp_fig, pm_fig, particle_bar
 
 if __name__ == "__main__":
-    app.run_server(debug = True, port = 8050)
+    app.run(debug = True, port = 8050)

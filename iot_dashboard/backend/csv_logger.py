@@ -26,6 +26,7 @@ def save_to_csv(record):
     with open(CSV_FILE, mode="a", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=FIELDNAMES)
 
-        if not file_exists:
+        if not file_exists or os.stat(CSV_FILE).st_size == 0:
+            
             writer.writeheader()
         writer.writerow(record)
