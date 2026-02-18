@@ -11,7 +11,7 @@ app = dash.Dash(__name__)
 app.title = "Air Quality Monitor"
 
 app.layout = html.Div([
-    html.H1("Air Quality Mult-Sensor Monitoring Sys"),
+    html.H1("Air Quality Indexing &` Monitoring System"),
 
     dcc.Interval(
         id="interval-component",
@@ -27,7 +27,7 @@ def fetch_data():
     try:
         response = requests.get(API_URL)
         return pd.DataFrame(response.json())
-    except:
+    except:``
         return pd.DataFrame()
     
 @app.callback(
